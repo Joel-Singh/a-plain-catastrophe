@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn5mdobt1twda"]
+
+[ext_resource type="Texture2D" uid="uid://qwarswmmafeu" path="res://assets/l0_Plane1.png" id="1_f4ir1"]
+[ext_resource type="Script" path="res://Player.gd" id="1_gly82"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_gly82")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 0)
+texture = ExtResource("1_f4ir1")
