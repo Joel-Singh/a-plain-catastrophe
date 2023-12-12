@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn5mdobt1twda"]
+[gd_scene load_steps=4 format=3 uid="uid://bn5mdobt1twda"]
 
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_66bj7"]
 [ext_resource type="Texture2D" uid="uid://4y475105tmgw" path="res://assets/l0_Plane1.png" id="2_ee1w6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxhpb"]
+size = Vector2(8, 56)
 
 [node name="Player" type="RigidBody2D"]
 script = ExtResource("1_66bj7")
@@ -11,3 +14,13 @@ metadata/_edit_group_ = true
 texture_filter = 1
 position = Vector2(-1, 0)
 texture = ExtResource("2_ee1w6")
+
+[node name="Body" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_sxhpb")
+
+[node name="LeftWing" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, 16, -23, 16, -4, -22)
+
+[node name="RightWing" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(4, -22, 23, 16, 4, 16)
