@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/Player.gd" id="1_66bj7"]
 [ext_resource type="Texture2D" uid="uid://4y475105tmgw" path="res://assets/l0_Plane1.png" id="2_ee1w6"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="RigidBody2D"]
 script = ExtResource("1_66bj7")
 metadata/_edit_group_ = true
 
