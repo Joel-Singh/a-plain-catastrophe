@@ -1,11 +1,7 @@
-extends Node2D
+extends RigidBody2D
 
-func _ready():
-  pass # Replace with function body.
-
-func _input(event):
-  if event is InputEventMouseMotion:
-    position = event.position
-
-func _process(delta):
-  pass
+func _integrate_forces(state):
+  var mousePosition: Vector2 = get_viewport().get_mouse_position()
+  var towardsMousePosition: Vector2 = mousePosition - position
+  var resulting: Vector2 = towardsMousePosition
+  state.linear_velocity = resulting
