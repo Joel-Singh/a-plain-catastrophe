@@ -8,6 +8,8 @@ size = Vector2(8, 56)
 
 [node name="Player" type="RigidBody2D"]
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_66bj7")
 metadata/_edit_group_ = true
 
@@ -25,3 +27,5 @@ polygon = PackedVector2Array(-4, 16, -23, 16, -4, -22)
 
 [node name="RightWing" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(4, -22, 23, 16, 4, 16)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

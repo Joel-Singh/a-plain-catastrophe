@@ -5,3 +5,5 @@ func _integrate_forces(state):
   var towardsMousePosition: Vector2 = mousePosition - position
   var resulting: Vector2 = towardsMousePosition
   state.linear_velocity = resulting
+func _on_body_entered(body):
+  queue_free()
