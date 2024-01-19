@@ -11,7 +11,7 @@ position = Vector2(563, 461)
 
 [node name="ObstacleTimer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 0.05
+wait_time = 0.1
 autostart = true
 
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

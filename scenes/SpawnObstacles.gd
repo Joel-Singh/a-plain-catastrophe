@@ -12,8 +12,8 @@ func _process(delta):
 
 
 func _on_obstacle_timer_timeout():
-  var newObstacle = obstacle.instantiate()
-  var screen = get_viewport_rect()
-  newObstacle.position.x = randi() % int(screen.size.x)
-  
-  add_child(newObstacle)
+  for n in 5:
+    var newObstacle = obstacle.instantiate()
+    var screen = get_viewport_rect()
+    newObstacle.position.x = randi() % int(screen.size.x)
+    add_child(newObstacle)
