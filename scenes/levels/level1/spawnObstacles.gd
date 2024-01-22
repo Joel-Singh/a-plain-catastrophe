@@ -20,6 +20,16 @@ func _on_timeout() -> void:
     var newObstacle = obstacle.instantiate()
     newObstacle.position.x = positionX
     obstacles.append(newObstacle)
-    
+  
+  obstacles = makeOpening(obstacles, { 'size': 20, 'starting': 5})
   for obstacle in obstacles:
     get_parent().add_child(obstacle)
+
+func makeOpening(array, opts) -> Array:
+  array = array.duplicate()
+  var size = opts.size
+  var starting = opts.starting
+  for n in range(size):
+    array.remove_at(starting)
+  return array
+  
