@@ -1,4 +1,4 @@
-extends Node2D
+extends Timer
 var obstacle = preload("res://scenes/Obstacle.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,9 @@ func _process(delta):
   pass
 
 
-func _on_obstacle_timer_timeout():
+func _on_timeout() -> void:
   for n in 5:
     var newObstacle = obstacle.instantiate()
-    var screen = get_viewport_rect()
+    var screen = get_parent().get_viewport_rect()
     newObstacle.position.x = randi() % int(screen.size.x)
     add_child(newObstacle)
