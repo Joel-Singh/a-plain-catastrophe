@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ho1yo2j5k0io"]
+
+[ext_resource type="PackedScene" uid="uid://bn5mdobt1twda" path="res://scenes/Player.tscn" id="1_yy4n2"]
+[ext_resource type="Texture2D" uid="uid://wkqnjsslx3hg" path="res://assets/background.png" id="3_ofxa2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_yy4n2")]
+position = Vector2(567, 558)
+
+[node name="ObstacleTimer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(553, 459)
+scale = Vector2(1.055, 1.055)
+texture = ExtResource("3_ofxa2")
+metadata/_edit_lock_ = true

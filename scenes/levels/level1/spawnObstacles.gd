@@ -12,8 +12,14 @@ func _process(delta):
 
 
 func _on_timeout() -> void:
-  for n in 5:
+  var obstacles = []
+  var distanceBetweenObstacle = 30
+  for positionX in range(
+    0, get_parent().get_viewport_rect().size.x, distanceBetweenObstacle
+  ):
     var newObstacle = obstacle.instantiate()
-    var screen = get_parent().get_viewport_rect()
-    newObstacle.position.x = randi() % int(screen.size.x)
-    add_child(newObstacle)
+    newObstacle.position.x = positionX
+    obstacles.append(newObstacle)
+    
+  for obstacle in obstacles:
+    get_parent().add_child(obstacle)

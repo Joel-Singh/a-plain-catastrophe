@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b76cqhw3m5q2o"]
+
+[ext_resource type="PackedScene" uid="uid://ho1yo2j5k0io" path="res://scenes/levels/levelTemplate.tscn" id="1_54afx"]
+[ext_resource type="Script" path="res://scenes/levels/level1/spawnObstacles.gd" id="2_vd5or"]
+
+[node name="Main" instance=ExtResource("1_54afx")]
+
+[node name="Player" parent="." index="0"]
+position = Vector2(567, 580)
+
+[node name="ObstacleTimer" parent="." index="1"]
+script = ExtResource("2_vd5or")
+
+[connection signal="timeout" from="ObstacleTimer" to="ObstacleTimer" method="_on_timeout"]
