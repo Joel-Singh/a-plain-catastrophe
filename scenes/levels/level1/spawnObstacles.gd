@@ -15,13 +15,17 @@ func _on_timeout() -> void:
   var obstacles = []
   var distanceBetweenObstacle = 30
   for positionX in range(
-    0, get_parent().get_viewport_rect().size.x, distanceBetweenObstacle
+    0, 
+    get_parent().get_viewport_rect().size.x, 
+    distanceBetweenObstacle
   ):
     var newObstacle = obstacle.instantiate()
     newObstacle.position.x = positionX
     obstacles.append(newObstacle)
   
-  obstacles = makeOpening(obstacles, { 'size': 20, 'starting': 5})
+  var size = 5
+  var starting = randi() % (obstacles.size() - 5)
+  obstacles = makeOpening(obstacles, { 'size': size, 'starting': starting})
   for obstacle in obstacles:
     get_parent().add_child(obstacle)
 
@@ -32,4 +36,3 @@ func makeOpening(array, opts) -> Array:
   for n in range(size):
     array.remove_at(starting)
   return array
-  

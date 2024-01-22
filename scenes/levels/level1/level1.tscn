@@ -9,6 +9,7 @@
 position = Vector2(567, 580)
 
 [node name="ObstacleTimer" parent="." index="1"]
+wait_time = 2.0
 script = ExtResource("2_vd5or")
 
 [connection signal="timeout" from="ObstacleTimer" to="ObstacleTimer" method="_on_timeout"]
