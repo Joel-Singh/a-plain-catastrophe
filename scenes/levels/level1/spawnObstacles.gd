@@ -25,7 +25,7 @@ func _on_timeout() -> void:
   
   var size = 5
   var starting = randi() % (obstacles.size() - 5)
-  obstacles = makeOpening(obstacles, { 'size': size, 'starting': starting})
+  obstacles = makeOpening(obstacles, { 'size': size, 'starting': starting })
   for obstacle in obstacles:
     get_parent().add_child(obstacle)
 
